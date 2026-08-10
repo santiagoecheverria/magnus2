@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
+import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_HREF } from '../config/contact';
 
 interface HeaderProps {
   onRegisterClick: () => void;
@@ -72,7 +73,15 @@ export default function Header({ onRegisterClick }: HeaderProps) {
           </nav>
 
           {/* CTA Button - Desktop */}
-          <div className="hidden md:block">
+          <div className="hidden md:flex items-center gap-4">
+            <a
+              href={CONTACT_PHONE_HREF}
+              className="inline-flex items-center gap-2 text-[#0B2F33] font-semibold hover:text-[#8A4E2E] transition-colors text-sm lg:text-base"
+              aria-label={`Llamar a Magnus al ${CONTACT_PHONE_DISPLAY}`}
+            >
+              <Phone className="w-4 h-4 flex-shrink-0" />
+              {CONTACT_PHONE_DISPLAY}
+            </a>
             <button
               onClick={onRegisterClick}
               className="btn-primary btn-small"
@@ -80,6 +89,15 @@ export default function Header({ onRegisterClick }: HeaderProps) {
               Registrarme
             </button>
           </div>
+
+          {/* Llamar - Mobile (siempre visible, junto al menú) */}
+          <a
+            href={CONTACT_PHONE_HREF}
+            className="md:hidden ml-auto mr-1 p-2 rounded-lg text-[#0B2F33] hover:bg-gray-100 transition-colors"
+            aria-label={`Llamar a Magnus al ${CONTACT_PHONE_DISPLAY}`}
+          >
+            <Phone className="w-6 h-6" />
+          </a>
 
           {/* Mobile Menu Button */}
           <button
@@ -108,6 +126,14 @@ export default function Header({ onRegisterClick }: HeaderProps) {
                   {item.label}
                 </button>
               ))}
+              <a
+                href={CONTACT_PHONE_HREF}
+                className="nav-link text-left py-3 px-4 hover:bg-gray-50 rounded-lg flex items-center gap-2 font-semibold"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <Phone className="w-5 h-5 flex-shrink-0" />
+                {CONTACT_PHONE_DISPLAY}
+              </a>
               <button
                 onClick={() => {
                   onRegisterClick();

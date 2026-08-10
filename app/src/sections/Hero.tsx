@@ -29,7 +29,7 @@ export default function Hero({ onRegisterClick, onLearnMoreClick }: HeroProps) {
             {/* Headline */}
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0B2F33] leading-tight mb-6">
               Tu casa te cuidó toda la vida.
-              <span className="text-[#C47A4A]"> Ahora es su turno.</span>
+              <span className="text-[#8A4E2E]"> Ahora es su turno.</span>
             </h1>
 
             {/* Subtitle */}
@@ -57,7 +57,7 @@ export default function Hero({ onRegisterClick, onLearnMoreClick }: HeroProps) {
             </div>
 
             {/* Trust Microcopy */}
-            <p className="text-sm text-[#6B7280] flex items-center justify-center lg:justify-start gap-2">
+            <p className="text-sm text-[#3D4E52] flex items-center justify-center lg:justify-start gap-2">
               <Shield className="w-4 h-4 text-[#1B6E6A]" />
               Sin costo. Sin compromiso. Datos protegidos.
             </p>
@@ -75,10 +75,10 @@ export default function Hero({ onRegisterClick, onLearnMoreClick }: HeroProps) {
               <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-lg">
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 bg-[#C47A4A]/20 rounded-full flex items-center justify-center flex-shrink-0">
-                    <span className="text-2xl font-bold text-[#C47A4A]">$</span>
+                    <span className="text-2xl font-bold text-[#8A4E2E]">$</span>
                   </div>
                   <div>
-                    <p className="text-sm text-[#6B7280]">Ingreso mensual estimado</p>
+                    <p className="text-sm text-[#3D4E52]">Ingreso mensual estimado</p>
                     <p className="text-xl font-bold text-[#0B2F33]">
                       Desde $1.400.000
                     </p>
@@ -96,7 +96,7 @@ export default function Hero({ onRegisterClick, onLearnMoreClick }: HeroProps) {
         <div className="hidden lg:flex justify-center mt-16">
           <button
             onClick={onLearnMoreClick}
-            className="flex flex-col items-center gap-2 text-[#6B7280] hover:text-[#1B6E6A] transition-colors"
+            className="flex flex-col items-center gap-2 text-[#3D4E52] hover:text-[#1B6E6A] transition-colors"
           >
             <span className="text-sm">Conoce más</span>
             <ChevronDown className="w-5 h-5 animate-bounce" />

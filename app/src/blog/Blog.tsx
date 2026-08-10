@@ -51,7 +51,7 @@ export default function Blog({ onPostClick }: BlogProps) {
           <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
             {/* Search */}
             <div className="relative w-full md:w-96">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-[#6B7280]" />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-[#3D4E52]" />
               <input
                 type="text"
                 placeholder="Buscar artículos..."
@@ -69,7 +69,7 @@ export default function Blog({ onPostClick }: BlogProps) {
                   onClick={() => setSelectedCategory(cat.id)}
                   className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                     selectedCategory === cat.id
-                      ? 'bg-[#C47A4A] text-white'
+                      ? 'bg-[#8A4E2E] text-white'
                       : 'bg-[#F4EFE6] text-[#4B5563] hover:bg-[#E5E0D5]'
                   }`}
                 >
@@ -86,7 +86,7 @@ export default function Blog({ onPostClick }: BlogProps) {
         <div className="max-w-7xl mx-auto">
           {filteredPosts.length === 0 ? (
             <div className="text-center py-16">
-              <p className="text-lg text-[#6B7280]">No se encontraron artículos que coincidan con tu búsqueda.</p>
+              <p className="text-lg text-[#3D4E52]">No se encontraron artículos que coincidan con tu búsqueda.</p>
             </div>
           ) : (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -113,14 +113,14 @@ export default function Blog({ onPostClick }: BlogProps) {
                       post.category === 'b2c' 
                         ? 'bg-[#1B6E6A]/10 text-[#1B6E6A]' 
                         : post.category === 'b2b'
-                        ? 'bg-[#C47A4A]/10 text-[#C47A4A]'
+                        ? 'bg-[#C47A4A]/10 text-[#8A4E2E]'
                         : 'bg-[#0B2F33]/10 text-[#0B2F33]'
                     }`}>
                       {post.categoryLabel}
                     </span>
 
                     {/* Title */}
-                    <h2 className={`font-bold text-[#0B2F33] mb-3 group-hover:text-[#C47A4A] transition-colors ${
+                    <h2 className={`font-bold text-[#0B2F33] mb-3 group-hover:text-[#8A4E2E] transition-colors ${
                       index === 0 && selectedCategory === 'all' ? 'text-2xl' : 'text-xl'
                     }`}>
                       {post.title}
@@ -132,7 +132,7 @@ export default function Blog({ onPostClick }: BlogProps) {
                     </p>
 
                     {/* Meta */}
-                    <div className="flex items-center gap-4 text-sm text-[#6B7280] mb-4">
+                    <div className="flex items-center gap-4 text-sm text-[#3D4E52] mb-4">
                       <span className="flex items-center gap-1">
                         <Calendar className="w-4 h-4" />
                         {new Date(post.date).toLocaleDateString('es-CL', { 
@@ -154,12 +154,12 @@ export default function Blog({ onPostClick }: BlogProps) {
                       </div>
                       <div>
                         <p className="font-medium text-[#0B2F33] text-sm">{post.author}</p>
-                        <p className="text-xs text-[#6B7280]">{post.authorRole}</p>
+                        <p className="text-xs text-[#3D4E52]">{post.authorRole}</p>
                       </div>
                     </div>
 
                     {/* Read More */}
-                    <div className="mt-4 flex items-center gap-2 text-[#C47A4A] font-medium group-hover:gap-3 transition-all">
+                    <div className="mt-4 flex items-center gap-2 text-[#8A4E2E] font-medium group-hover:gap-3 transition-all">
                       <span>Leer artículo</span>
                       <ArrowRight className="w-4 h-4" />
                     </div>

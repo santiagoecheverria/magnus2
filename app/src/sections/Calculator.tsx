@@ -74,7 +74,7 @@ export default function Calculator() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="inline-block px-4 py-2 bg-[#C47A4A]/10 rounded-full text-sm font-medium text-[#C47A4A] mb-4">
+          <span className="inline-block px-4 py-2 bg-[#C47A4A]/10 rounded-full text-sm font-medium text-[#8A4E2E] mb-4">
             <CalcIcon className="w-4 h-4 inline mr-2" />
             Simulador
           </span>
@@ -113,7 +113,7 @@ export default function Calculator() {
                 onChange={(e) => setTasacionUF(Number(e.target.value))}
                 className="slider-magnus mb-3"
               />
-              <div className="flex justify-between text-xs text-[#6B7280]">
+              <div className="flex justify-between text-xs text-[#3D4E52]">
                 <span>3.000 UF</span>
                 <span>15.000 UF</span>
               </div>
@@ -142,7 +142,7 @@ export default function Calculator() {
                 onChange={(e) => setPieUF(Number(e.target.value))}
                 className="slider-magnus mb-3"
               />
-              <div className="flex justify-between text-xs text-[#6B7280]">
+              <div className="flex justify-between text-xs text-[#3D4E52]">
                 <span>0 UF</span>
                 <span>Máx: {formatUF(resultados.pieMaximo)} (10%)</span>
               </div>
@@ -171,7 +171,7 @@ export default function Calculator() {
                 onChange={(e) => setCuotas(Number(e.target.value))}
                 className="slider-magnus mb-3"
               />
-              <div className="flex justify-between text-xs text-[#6B7280]">
+              <div className="flex justify-between text-xs text-[#3D4E52]">
                 <span>5 años (60)</span>
                 <span>20 años (240)</span>
               </div>
@@ -187,7 +187,7 @@ export default function Calculator() {
             {/* Main Result */}
             <div className="result-box">
               <div className="flex items-center justify-center gap-2 mb-4">
-                <TrendingUp className="w-6 h-6 text-[#C47A4A]" />
+                <TrendingUp className="w-6 h-6 text-[#E3A579]" />
                 <span className="text-lg text-white/80">Ingreso mensual estimado</span>
               </div>
               <div className="result-amount mb-2">
@@ -212,7 +212,7 @@ export default function Calculator() {
                     </div>
                     <div>
                       <p className="font-medium text-[#0B2F33]">Liquidación mensual</p>
-                      <p className="text-sm text-[#6B7280]">Transferencia a tu cuenta</p>
+                      <p className="text-sm text-[#3D4E52]">Transferencia a tu cuenta</p>
                     </div>
                   </div>
                   <span className="font-semibold text-[#0B2F33]">
@@ -223,11 +223,11 @@ export default function Calculator() {
                 <div className="flex justify-between items-center py-3">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 bg-[#C47A4A]/10 rounded-lg flex items-center justify-center">
-                      <span className="text-[#C47A4A] font-semibold">2</span>
+                      <span className="text-[#8A4E2E] font-semibold">2</span>
                     </div>
                     <div>
                       <p className="font-medium text-[#0B2F33]">Monto por arriendo</p>
-                      <p className="text-sm text-[#6B7280]">Uso de la propiedad</p>
+                      <p className="text-sm text-[#3D4E52]">Uso de la propiedad</p>
                     </div>
                   </div>
                   <span className="font-semibold text-[#0B2F33]">
@@ -244,26 +244,26 @@ export default function Calculator() {
               </h4>
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <p className="text-sm text-[#6B7280]">Valor propiedad</p>
+                  <p className="text-sm text-[#3D4E52]">Valor propiedad</p>
                   <p className="font-semibold text-[#0B2F33]">
                     {formatCurrency(tasacionUF * UF_VALUE)}
                   </p>
                 </div>
                 <div>
-                  <p className="text-sm text-[#6B7280]">Pago inicial</p>
+                  <p className="text-sm text-[#3D4E52]">Pago inicial</p>
                   <p className="font-semibold text-[#0B2F33]">
                     {formatCurrency(resultados.pieValido * UF_VALUE)}
                   </p>
                 </div>
                 <div>
-                  <p className="text-sm text-[#6B7280]">Plazo</p>
+                  <p className="text-sm text-[#3D4E52]">Plazo</p>
                   <p className="font-semibold text-[#0B2F33]">
                     {Math.floor(cuotas / 12)} años
                   </p>
                 </div>
                 <div>
-                  <p className="text-sm text-[#6B7280]">Total recibido</p>
-                  <p className="font-semibold text-[#C47A4A]">
+                  <p className="text-sm text-[#3D4E52]">Total recibido</p>
+                  <p className="font-semibold text-[#8A4E2E]">
                     {formatCurrency(resultados.pagoMensualTotal * cuotas + resultados.pieValido * UF_VALUE)}
                   </p>
                 </div>
@@ -271,12 +271,12 @@ export default function Calculator() {
             </div>
 
             {/* Disclaimer */}
-            <p className="text-xs text-[#6B7280] text-center">
+            <p className="text-xs text-[#3D4E52] text-center">
               <Info className="w-4 h-4 inline mr-1" />
               Estos valores son referenciales. Los montos finales dependen de la 
               evaluación específica de tu propiedad y situación.
             </p>
-            <p className="text-xs text-[#6B7280] text-center italic">
+            <p className="text-xs text-[#3D4E52] text-center italic">
               * El valor de la cuota es reajustado en UF mensualmente.
             </p>
           </div>

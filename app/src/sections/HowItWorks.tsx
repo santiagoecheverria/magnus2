@@ -53,7 +53,7 @@ export default function HowItWorks() {
               className="card-magnus relative group"
             >
               {/* Step Number */}
-              <div className="absolute -top-4 -left-2 w-12 h-12 bg-[#C47A4A] rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg">
+              <div className="absolute -top-4 -left-2 w-12 h-12 bg-[#8A4E2E] rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg">
                 {step.number}
               </div>
 
@@ -82,7 +82,7 @@ export default function HowItWorks() {
 
         {/* Note */}
         <div className="mt-12 text-center">
-          <p className="text-sm text-[#6B7280] inline-flex items-center gap-2 bg-white px-6 py-3 rounded-full shadow-sm">
+          <p className="text-sm text-[#3D4E52] inline-flex items-center gap-2 bg-white px-6 py-3 rounded-full shadow-sm">
             <span className="w-2 h-2 bg-[#1B6E6A] rounded-full" />
             El pre-registro no te obliga a nada. Solo nos permite contactarte al lanzamiento.
           </p>

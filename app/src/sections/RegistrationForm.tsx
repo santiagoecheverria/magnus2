@@ -1,5 +1,11 @@
 import { useState } from 'react';
 import { ChevronRight, ChevronLeft, Check, Home, Building, MapPin, FileText, Mail, Phone, Shield, Loader2 } from 'lucide-react';
+import {
+  CONTACT_EMAIL,
+  CONTACT_EMAIL_HREF,
+  CONTACT_PHONE_DISPLAY,
+  CONTACT_PHONE_HREF,
+} from '../config/contact';
 
 interface RegistrationFormProps {
   isOpen: boolean;
@@ -256,7 +262,7 @@ export default function RegistrationForm({ isOpen, onClose }: RegistrationFormPr
               <h2 className="text-2xl font-bold text-[#0B2F33]">
                 Pre-registro Magnus
               </h2>
-              <p className="text-[#6B7280] mt-1">
+              <p className="text-[#3D4E52] mt-1">
                 {isSubmitted 
                   ? '¡Registro completado!' 
                   : `Paso ${step} de 2: ${step === 1 ? 'Datos de la propiedad' : 'Tus datos'}`
@@ -268,7 +274,7 @@ export default function RegistrationForm({ isOpen, onClose }: RegistrationFormPr
               className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
             >
               <span className="sr-only">Cerrar</span>
-              <svg className="w-6 h-6 text-[#6B7280]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-6 h-6 text-[#3D4E52]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
@@ -299,7 +305,7 @@ export default function RegistrationForm({ isOpen, onClose }: RegistrationFormPr
                 te contactará apenas lancemos para explicarte todos los detalles.
               </p>
               <div className="bg-[#F4EFE6] rounded-xl p-6 mb-6">
-                <p className="text-sm text-[#6B7280] mb-2">¿Qué sigue?</p>
+                <p className="text-sm text-[#3D4E52] mb-2">¿Qué sigue?</p>
                 <ul className="text-left text-[#4B5563] space-y-2">
                   <li className="flex items-start gap-2">
                     <Check className="w-5 h-5 text-[#1B6E6A] flex-shrink-0 mt-0.5" />
@@ -317,10 +323,13 @@ export default function RegistrationForm({ isOpen, onClose }: RegistrationFormPr
               </div>
               <div className="bg-[#1B6E6A]/10 rounded-xl p-4 mb-6">
                 <p className="text-sm text-[#1B6E6A]">
-                  <strong>Nota importante:</strong> Tu pre-registro ha sido guardado. 
-                  Si tienes alguna duda o necesitas confirmación, escríbenos a{' '}
-                  <a href="mailto:hola@soymagnus.com" className="underline font-semibold">
-                    hola@soymagnus.com
+                  <strong>Nota importante:</strong> Tu pre-registro ha sido guardado.
+                  Si tienes alguna duda o necesitas confirmación, llámanos al{' '}
+                  <a href={CONTACT_PHONE_HREF} className="underline font-semibold">
+                    {CONTACT_PHONE_DISPLAY}
+                  </a>, escríbenos a{' '}
+                  <a href={CONTACT_EMAIL_HREF} className="underline font-semibold">
+                    {CONTACT_EMAIL}
                   </a>{' '}
                   o responde al correo de confirmación que recibirás.
                 </p>
@@ -396,12 +405,12 @@ export default function RegistrationForm({ isOpen, onClose }: RegistrationFormPr
                     onClick={() => handleInputChange('tipoPropiedad', 'casa')}
                     className={`flex-1 flex items-center justify-center gap-2 p-4 rounded-xl border-2 transition-all ${
                       formData.tipoPropiedad === 'casa'
-                        ? 'border-[#C47A4A] bg-[#C47A4A]/5'
+                        ? 'border-[#8A4E2E] bg-[#C47A4A]/5'
                         : 'border-[#E5E0D5] hover:border-[#1B6E6A]'
                     }`}
                   >
-                    <Home className={`w-5 h-5 ${formData.tipoPropiedad === 'casa' ? 'text-[#C47A4A]' : 'text-[#6B7280]'}`} />
-                    <span className={formData.tipoPropiedad === 'casa' ? 'text-[#0B2F33] font-medium' : 'text-[#6B7280]'}>
+                    <Home className={`w-5 h-5 ${formData.tipoPropiedad === 'casa' ? 'text-[#8A4E2E]' : 'text-[#3D4E52]'}`} />
+                    <span className={formData.tipoPropiedad === 'casa' ? 'text-[#0B2F33] font-medium' : 'text-[#3D4E52]'}>
                       Casa
                     </span>
                   </button>
@@ -410,12 +419,12 @@ export default function RegistrationForm({ isOpen, onClose }: RegistrationFormPr
                     onClick={() => handleInputChange('tipoPropiedad', 'departamento')}
                     className={`flex-1 flex items-center justify-center gap-2 p-4 rounded-xl border-2 transition-all ${
                       formData.tipoPropiedad === 'departamento'
-                        ? 'border-[#C47A4A] bg-[#C47A4A]/5'
+                        ? 'border-[#8A4E2E] bg-[#C47A4A]/5'
                         : 'border-[#E5E0D5] hover:border-[#1B6E6A]'
                     }`}
                   >
-                    <Building className={`w-5 h-5 ${formData.tipoPropiedad === 'departamento' ? 'text-[#C47A4A]' : 'text-[#6B7280]'}`} />
-                    <span className={formData.tipoPropiedad === 'departamento' ? 'text-[#0B2F33] font-medium' : 'text-[#6B7280]'}>
+                    <Building className={`w-5 h-5 ${formData.tipoPropiedad === 'departamento' ? 'text-[#8A4E2E]' : 'text-[#3D4E52]'}`} />
+                    <span className={formData.tipoPropiedad === 'departamento' ? 'text-[#0B2F33] font-medium' : 'text-[#3D4E52]'}>
                       Departamento
                     </span>
                   </button>
@@ -516,7 +525,7 @@ export default function RegistrationForm({ isOpen, onClose }: RegistrationFormPr
                   <span className="text-sm text-[#4B5563]">
                     Acepto ser contactado por Magnus y declaro que la información 
                     proporcionada es correcta. He leído la{' '}
-                    <a href="#" className="text-[#1B6E6A] underline hover:text-[#C47A4A]">
+                    <a href="#" className="text-[#1B6E6A] underline hover:text-[#8A4E2E]">
                       Política de Privacidad
                     </a>.
                   </span>
@@ -530,7 +539,7 @@ export default function RegistrationForm({ isOpen, onClose }: RegistrationFormPr
                 </div>
               )}
 
-              <div className="flex items-center gap-2 text-sm text-[#6B7280]">
+              <div className="flex items-center gap-2 text-sm text-[#3D4E52]">
                 <Shield className="w-4 h-4 text-[#1B6E6A]" />
                 Tus datos están protegidos y solo se usarán para contactarte sobre Magnus.
               </div>

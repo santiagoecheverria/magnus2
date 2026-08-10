@@ -1,4 +1,10 @@
-import { Shield, Lock, UserCheck, Eye, Mail } from 'lucide-react';
+import { Shield, Lock, UserCheck, Eye, Mail, Phone } from 'lucide-react';
+import {
+  CONTACT_EMAIL,
+  CONTACT_EMAIL_HREF,
+  CONTACT_PHONE_DISPLAY,
+  CONTACT_PHONE_HREF,
+} from '../config/contact';
 
 export default function Trust() {
   return (
@@ -26,7 +32,7 @@ export default function Trust() {
                 </div>
                 <span className="font-semibold text-[#0B2F33]">Tu tranquilidad primero</span>
               </div>
-              <p className="text-sm text-[#6B7280]">
+              <p className="text-sm text-[#3D4E52]">
                 Solo usamos tus datos para contactarte sobre Magnus. Nada más.
               </p>
             </div>
@@ -67,7 +73,7 @@ export default function Trust() {
 
               <div className="flex gap-4">
                 <div className="w-12 h-12 bg-[#C47A4A]/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <UserCheck className="w-6 h-6 text-[#C47A4A]" />
+                  <UserCheck className="w-6 h-6 text-[#8A4E2E]" />
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-[#0B2F33] mb-1">
@@ -100,16 +106,24 @@ export default function Trust() {
 
             {/* Contact Info */}
             <div className="mt-8 pt-8 border-t border-[#E5E0D5]">
-              <p className="text-sm text-[#6B7280] mb-4">
+              <p className="text-sm text-[#3D4E52] mb-4">
                 ¿Tienes dudas antes de registrar tus datos?
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
                 <a
-                  href="mailto:hola@soymagnus.com"
-                  className="inline-flex items-center gap-2 text-[#1B6E6A] hover:text-[#C47A4A] transition-colors"
+                  href={CONTACT_PHONE_HREF}
+                  className="inline-flex items-center gap-2 text-[#1B6E6A] hover:text-[#8A4E2E] transition-colors font-medium"
+                  aria-label={`Llamar a Magnus al ${CONTACT_PHONE_DISPLAY}`}
                 >
-                  <Mail className="w-5 h-5" />
-                  hola@soymagnus.com
+                  <Phone className="w-5 h-5 flex-shrink-0" />
+                  {CONTACT_PHONE_DISPLAY}
+                </a>
+                <a
+                  href={CONTACT_EMAIL_HREF}
+                  className="inline-flex items-center gap-2 text-[#1B6E6A] hover:text-[#8A4E2E] transition-colors"
+                >
+                  <Mail className="w-5 h-5 flex-shrink-0" />
+                  {CONTACT_EMAIL}
                 </a>
               </div>
             </div>

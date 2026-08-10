@@ -1,4 +1,11 @@
-import { Mail, MapPin, Shield, Lock, Linkedin, Facebook, Instagram, BookOpen } from 'lucide-react';
+import { Mail, MapPin, Phone, MessageCircle, Shield, Lock, Linkedin, Facebook, Instagram, BookOpen } from 'lucide-react';
+import {
+  CONTACT_EMAIL,
+  CONTACT_EMAIL_HREF,
+  CONTACT_PHONE_DISPLAY,
+  CONTACT_PHONE_HREF,
+  CONTACT_WHATSAPP_HREF,
+} from '../config/contact';
 
 interface FooterProps {
   onBlogClick?: () => void;
@@ -26,7 +33,7 @@ export default function Footer({ onBlogClick, onHomeClick }: FooterProps) {
             </p>
             <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center">
-                <Shield className="w-5 h-5 text-[#C47A4A]" />
+                <Shield className="w-5 h-5 text-[#E3A579]" />
               </div>
               <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center">
                 <Lock className="w-5 h-5 text-[#1B6E6A]" />
@@ -70,7 +77,7 @@ export default function Footer({ onBlogClick, onHomeClick }: FooterProps) {
               <li>
                 <button
                   onClick={onHomeClick}
-                  className="text-white/70 hover:text-[#C47A4A] transition-colors text-left"
+                  className="text-white/70 hover:text-[#E3A579] transition-colors text-left"
                 >
                   Inicio
                 </button>
@@ -79,7 +86,7 @@ export default function Footer({ onBlogClick, onHomeClick }: FooterProps) {
                 <a
                   href="#como-funciona"
                   onClick={(e) => { e.preventDefault(); onHomeClick?.(); }}
-                  className="text-white/70 hover:text-[#C47A4A] transition-colors"
+                  className="text-white/70 hover:text-[#E3A579] transition-colors"
                 >
                   Cómo funciona
                 </a>
@@ -88,7 +95,7 @@ export default function Footer({ onBlogClick, onHomeClick }: FooterProps) {
                 <a
                   href="#beneficios"
                   onClick={(e) => { e.preventDefault(); onHomeClick?.(); }}
-                  className="text-white/70 hover:text-[#C47A4A] transition-colors"
+                  className="text-white/70 hover:text-[#E3A579] transition-colors"
                 >
                   Beneficios
                 </a>
@@ -97,7 +104,7 @@ export default function Footer({ onBlogClick, onHomeClick }: FooterProps) {
                 <a
                   href="#faq"
                   onClick={(e) => { e.preventDefault(); onHomeClick?.(); }}
-                  className="text-white/70 hover:text-[#C47A4A] transition-colors"
+                  className="text-white/70 hover:text-[#E3A579] transition-colors"
                 >
                   Preguntas frecuentes
                 </a>
@@ -105,7 +112,7 @@ export default function Footer({ onBlogClick, onHomeClick }: FooterProps) {
               <li>
                 <button
                   onClick={onBlogClick}
-                  className="text-white/70 hover:text-[#C47A4A] transition-colors flex items-center gap-2"
+                  className="text-white/70 hover:text-[#E3A579] transition-colors flex items-center gap-2"
                 >
                   <BookOpen className="w-4 h-4" />
                   Blog
@@ -120,11 +127,33 @@ export default function Footer({ onBlogClick, onHomeClick }: FooterProps) {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="mailto:hola@soymagnus.com"
-                  className="text-white/70 hover:text-[#C47A4A] transition-colors flex items-center gap-2"
+                  href={CONTACT_PHONE_HREF}
+                  className="text-white/70 hover:text-[#E3A579] transition-colors flex items-center gap-2"
+                  aria-label={`Llamar a Magnus al ${CONTACT_PHONE_DISPLAY}`}
                 >
-                  <Mail className="w-4 h-4" />
-                  hola@soymagnus.com
+                  <Phone className="w-4 h-4 flex-shrink-0" />
+                  {CONTACT_PHONE_DISPLAY}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={CONTACT_WHATSAPP_HREF}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/70 hover:text-[#E3A579] transition-colors flex items-center gap-2"
+                  aria-label="Escribir a Magnus por WhatsApp"
+                >
+                  <MessageCircle className="w-4 h-4 flex-shrink-0" />
+                  WhatsApp
+                </a>
+              </li>
+              <li>
+                <a
+                  href={CONTACT_EMAIL_HREF}
+                  className="text-white/70 hover:text-[#E3A579] transition-colors flex items-center gap-2"
+                >
+                  <Mail className="w-4 h-4 flex-shrink-0" />
+                  {CONTACT_EMAIL}
                 </a>
               </li>
               <li className="flex items-start gap-2 text-white/70">
@@ -142,19 +171,19 @@ export default function Footer({ onBlogClick, onHomeClick }: FooterProps) {
         {/* Legal */}
         <div className="border-t border-white/10 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-white/50 text-sm text-center md:text-left">
+            <p className="text-white/70 text-sm text-center md:text-left">
               © {currentYear} Magnus. Todos los derechos reservados.
             </p>
             <div className="flex gap-6">
               <a
                 href="#"
-                className="text-white/50 hover:text-white text-sm transition-colors"
+                className="text-white/70 hover:text-white text-sm transition-colors"
               >
                 Términos de servicio
               </a>
               <a
                 href="#"
-                className="text-white/50 hover:text-white text-sm transition-colors"
+                className="text-white/70 hover:text-white text-sm transition-colors"
               >
                 Política de privacidad
               </a>
@@ -164,7 +193,7 @@ export default function Footer({ onBlogClick, onHomeClick }: FooterProps) {
 
         {/* Disclaimer */}
         <div className="border-t border-white/10 py-6">
-          <p className="text-white/40 text-xs text-center max-w-4xl mx-auto">
+          <p className="text-white/70 text-xs text-center max-w-4xl mx-auto">
             Los valores mostrados en esta página son referenciales y estimados. 
             Los montos finales, plazos y condiciones dependen de la evaluación 
             específica de cada propiedad y situación personal. El pre-registro 

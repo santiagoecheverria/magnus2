@@ -45,7 +45,7 @@ export default function Benefits() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-block px-4 py-2 bg-[#C47A4A]/10 rounded-full text-sm font-medium text-[#C47A4A] mb-4">
+          <span className="inline-block px-4 py-2 bg-[#C47A4A]/10 rounded-full text-sm font-medium text-[#8A4E2E] mb-4">
             Ventajas
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-[#0B2F33] mb-4">
@@ -69,7 +69,7 @@ export default function Benefits() {
               }`}
             >
               {benefit.highlight && (
-                <div className="absolute top-0 right-0 bg-[#C47A4A] text-white text-xs font-medium px-3 py-1 rounded-bl-lg">
+                <div className="absolute top-0 right-0 bg-[#8A4E2E] text-white text-xs font-medium px-3 py-1 rounded-bl-lg">
                   Principal
                 </div>
               )}
@@ -83,7 +83,7 @@ export default function Benefits() {
               >
                 <benefit.icon
                   className={`w-7 h-7 ${
-                    benefit.highlight ? 'text-[#C47A4A]' : 'text-[#1B6E6A]'
+                    benefit.highlight ? 'text-[#8A4E2E]' : 'text-[#1B6E6A]'
                   }`}
                 />
               </div>
@@ -105,7 +105,7 @@ export default function Benefits() {
             <p className="text-xl sm:text-2xl text-[#0B2F33] font-medium italic mb-4">
               "Tu casa sigue siendo tu refugio, pero ahora también es tu sustento."
             </p>
-            <footer className="text-[#6B7280]">
+            <footer className="text-[#3D4E52]">
               — El equipo Magnus
             </footer>
           </blockquote>

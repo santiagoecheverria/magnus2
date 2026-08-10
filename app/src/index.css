@@ -11,7 +11,22 @@
   --magnus-background: #F4EFE6;
   --magnus-text: #1F2933;
   --magnus-cream: #FAF8F4;
-  
+
+  /*
+   * Variantes accesibles de la terracota Magnus.
+   * El terracota base (#C47A4A) solo alcanza 3.4:1 sobre blanco y 2.9:1 sobre
+   * Arena, así que queda reservado para fondos y elementos decorativos.
+   * Para texto e íconos sobre fondo claro se usa accent-dark (6.5:1) y
+   * sobre fondo oscuro accent-on-dark (6.8:1 sobre Petróleo).
+   */
+  --magnus-accent-deep: #6F3E24;
+  --magnus-accent-on-dark: #E3A579;
+
+  /* Gris de apoyo con 7.6:1 sobre Arena — reemplaza al #6B7280 (4.2:1) */
+  --magnus-text-muted: #3D4E52;
+  --magnus-placeholder: #5C6970;
+  --magnus-neutral-line: #8B959C;
+
   --radius: 0.625rem;
   --background: 42 33% 94%;
   --foreground: 210 20% 16%;
@@ -25,9 +40,9 @@
   --secondary-foreground: 42 33% 94%;
   --muted: 42 20% 90%;
   --muted-foreground: 210 15% 40%;
-  --accent: 24 48% 53%;
+  --accent: 21 50% 36%;
   --accent-foreground: 0 0% 100%;
-  --destructive: 0 84% 60%;
+  --destructive: 0 74% 42%;
   --destructive-foreground: 0 0% 100%;
   --border: 42 20% 85%;
   --input: 42 20% 85%;
@@ -78,7 +93,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Button Styles */
 .btn-primary {
-  background: var(--magnus-accent);
+  background: var(--magnus-accent-dark);
   color: white;
   padding: 1rem 2rem;
   border-radius: 0.5rem;
@@ -94,9 +109,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary:hover {
-  background: var(--magnus-accent-dark);
+  background: var(--magnus-accent-deep);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(196, 122, 74, 0.3);
+  box-shadow: 0 4px 12px rgba(138, 78, 46, 0.35);
 }
 
 .btn-secondary {
@@ -173,7 +188,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .input-magnus::placeholder {
-  color: #9CA3AF;
+  color: var(--magnus-placeholder);
 }
 
 /* Label Styles */
@@ -188,14 +203,14 @@ h1, h2, h3, h4, h5, h6 {
 /* Helper Text */
 .helper-text {
   font-size: 0.85rem;
-  color: #6B7280;
+  color: var(--magnus-text-muted);
   margin-top: 0.25rem;
 }
 
 /* Error Text */
 .error-text {
   font-size: 0.85rem;
-  color: #DC2626;
+  color: #B91C1C;
   margin-top: 0.25rem;
 }
 
@@ -212,7 +227,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: #D1D5DB;
+  background: var(--magnus-neutral-line);
   transition: all 0.3s ease;
 }
 
@@ -224,7 +239,7 @@ h1, h2, h3, h4, h5, h6 {
 .step-line {
   width: 40px;
   height: 2px;
-  background: #D1D5DB;
+  background: var(--magnus-neutral-line);
 }
 
 .step-line.active {
@@ -248,7 +263,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .faq-answer {
-  color: #4B5563;
+  color: var(--magnus-text-muted);
   margin-top: 1rem;
   line-height: 1.7;
 }
@@ -272,7 +287,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   height: 8px;
   border-radius: 4px;
-  background: #E5E0D5;
+  background: #C9C1B2;
   outline: none;
 }
 
@@ -282,9 +297,9 @@ h1, h2, h3, h4, h5, h6 {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: var(--magnus-accent);
+  background: var(--magnus-accent-dark);
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(196, 122, 74, 0.4);
+  box-shadow: 0 2px 8px rgba(138, 78, 46, 0.4);
   transition: all 0.2s ease;
 }
 
@@ -304,7 +319,7 @@ h1, h2, h3, h4, h5, h6 {
 .result-amount {
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--magnus-accent);
+  color: var(--magnus-accent-on-dark);
 }
 
 /* Animation Classes */
@@ -340,7 +355,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-link:hover {
-  color: var(--magnus-accent);
+  color: var(--magnus-accent-dark);
 }
 
 /* Mobile Menu */
@@ -354,7 +369,7 @@ h1, h2, h3, h4, h5, h6 {
 button:focus-visible,
 a:focus-visible,
 input:focus-visible {
-  outline: 2px solid var(--magnus-accent);
+  outline: 3px solid var(--magnus-accent-dark);
   outline-offset: 2px;
 }
 

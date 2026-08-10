@@ -355,7 +355,7 @@ TÍTULO: "Resolvemos tus dudas"
 - **¿Con quién hablaré?** - Un especialista de nuestro equipo te llamará para explicarte la propuesta. Sin presión, sin técnicismos. Solo conversación clara y honesta.
 - **El pre-registro no te obliga a nada** - Registrar tus datos no significa que debas avanzar. Es solo para que podamos contactarte cuando lancemos y explicarte las opciones disponibles.
 
-**Contacto:** ¿Tienes dudas antes de registrar tus datos? → hola@soymagnus.com
+**Contacto:** ¿Tienes dudas antes de registrar tus datos? → +56 9 5144 2264 | hola@soymagnus.com
 
 ---
 
@@ -439,7 +439,7 @@ No es obligatorio, pero sí recomendamos conversarlo con tu familia. Por eso, cu
 
 **Enlaces:** Cómo funciona | Beneficios | Preguntas frecuentes | Pre-registro
 
-**Contacto:** hola@soymagnus.com | Chile
+**Contacto:** +56 9 5144 2264 | WhatsApp | hola@soymagnus.com | Chile
 
 **Legal:** © 2025 Magnus. Todos los derechos reservados. | Términos de servicio | Política de privacidad
 
@@ -542,11 +542,20 @@ No es obligatorio, pero sí recomendamos conversarlo con tu familia. Por eso, cu
 |-------|-----|-----|
 | Primary | #0B2F33 | Títulos, texto principal, footer |
 | Secondary | #1B6E6A | Acentos, badges, elementos de confianza |
-| Accent | #C47A4A | CTAs principales, highlights, badges importantes |
-| Accent Dark | #8A4E2E | Hover states en CTAs |
+| Accent | #C47A4A | **Solo fondos y elementos decorativos** (tintes, círculos, barras de progreso) |
+| Accent Dark | #8A4E2E | CTAs principales, texto e íconos terracota sobre fondo claro |
+| Accent Deep | #6F3E24 | Hover states en CTAs |
+| Accent On Dark | #E3A579 | Texto e íconos terracota sobre fondo Petróleo |
 | Background | #F4EFE6 | Fondo principal de la página |
 | Cream | #FAF8F4 | Fondos alternativos de secciones |
 | Text | #1F2933 | Texto body |
+| Text Muted | #3D4E52 | Texto de apoyo, helper text, disclaimers |
+| Placeholder | #5C6970 | Placeholders de formulario |
+
+> ⚠️ **Regla de contraste del acento:** el terracota base (#C47A4A) alcanza solo
+> 3.4:1 sobre blanco y 2.9:1 sobre Arena, por lo que **nunca** debe usarse como
+> color de texto ni como fondo de un botón con texto blanco. Para eso existen
+> `Accent Dark` (6.5:1 con blanco) y `Accent On Dark` (6.8:1 sobre Petróleo).
 
 ---
 
@@ -562,7 +571,9 @@ La landing está diseñada mobile-first, priorizando la experiencia en dispositi
 
 ## ♿ Accesibilidad (A11y)
 
-- Contraste mínimo 4.5:1 para todo el texto
+- Contraste mínimo 4.5:1 (WCAG AA) para todo el texto, verificado color por color.
+  El texto de apoyo, los disclaimers y los legales alcanzan AAA (≥7:1) por el
+  perfil de la audiencia 65+
 - Botones mínimo 44x44px en touch devices
 - Navegación por teclado completa
 - Labels asociados a todos los inputs

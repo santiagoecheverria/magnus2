@@ -1,5 +1,11 @@
 import { useState } from 'react';
-import { ChevronDown, HelpCircle } from 'lucide-react';
+import { ChevronDown, HelpCircle, Phone } from 'lucide-react';
+import {
+  CONTACT_EMAIL,
+  CONTACT_EMAIL_HREF,
+  CONTACT_PHONE_DISPLAY,
+  CONTACT_PHONE_HREF,
+} from '../config/contact';
 
 const faqs = [
   {
@@ -101,14 +107,25 @@ export default function FAQ() {
             ¿Tienes otra pregunta?
           </h3>
           <p className="text-[#4B5563] mb-6">
-            Estamos aquí para ayudarte. Escríbenos y te responderemos lo antes posible.
+            Estamos aquí para ayudarte. Llámanos o escríbenos y te responderemos
+            lo antes posible.
           </p>
-          <a
-            href="mailto:hola@soymagnus.com"
-            className="btn-secondary inline-flex"
-          >
-            hola@soymagnus.com
-          </a>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href={CONTACT_PHONE_HREF}
+              className="btn-primary inline-flex"
+              aria-label={`Llamar a Magnus al ${CONTACT_PHONE_DISPLAY}`}
+            >
+              <Phone className="w-5 h-5" />
+              {CONTACT_PHONE_DISPLAY}
+            </a>
+            <a
+              href={CONTACT_EMAIL_HREF}
+              className="btn-secondary inline-flex"
+            >
+              {CONTACT_EMAIL}
+            </a>
+          </div>
         </div>
       </div>
     </section>

@@ -36,7 +36,7 @@ export default function BlogPost({ slug, onBack, onPostClick }: BlogPostProps) {
           <div className="flex items-center justify-between h-16">
             <button
               onClick={onBack}
-              className="flex items-center gap-2 text-[#0B2F33] hover:text-[#C47A4A] transition-colors"
+              className="flex items-center gap-2 text-[#0B2F33] hover:text-[#8A4E2E] transition-colors"
             >
               <ArrowLeft className="w-5 h-5" />
               <span className="font-medium">Volver al blog</span>
@@ -153,7 +153,7 @@ export default function BlogPost({ slug, onBack, onPostClick }: BlogPostProps) {
 
           {/* Tags */}
           <div className="mt-12 pt-8 border-t border-[#E5E0D5]">
-            <p className="text-sm text-[#6B7280] mb-3">Etiquetas:</p>
+            <p className="text-sm text-[#3D4E52] mb-3">Etiquetas:</p>
             <div className="flex flex-wrap gap-2">
               {post.tags.map((tag, index) => (
                 <span
@@ -168,7 +168,7 @@ export default function BlogPost({ slug, onBack, onPostClick }: BlogPostProps) {
 
           {/* Share */}
           <div className="mt-8 pt-8 border-t border-[#E5E0D5]">
-            <p className="text-sm text-[#6B7280] mb-3 flex items-center gap-2">
+            <p className="text-sm text-[#3D4E52] mb-3 flex items-center gap-2">
               <Share2 className="w-4 h-4" />
               Compartir:
             </p>
@@ -226,12 +226,12 @@ export default function BlogPost({ slug, onBack, onPostClick }: BlogPostProps) {
                       relatedPost.category === 'b2c' 
                         ? 'bg-[#1B6E6A]/10 text-[#1B6E6A]' 
                         : relatedPost.category === 'b2b'
-                        ? 'bg-[#C47A4A]/10 text-[#C47A4A]'
+                        ? 'bg-[#C47A4A]/10 text-[#8A4E2E]'
                         : 'bg-[#0B2F33]/10 text-[#0B2F33]'
                     }`}>
                       {relatedPost.categoryLabel}
                     </span>
-                    <h3 className="font-semibold text-[#0B2F33] group-hover:text-[#C47A4A] transition-colors line-clamp-2">
+                    <h3 className="font-semibold text-[#0B2F33] group-hover:text-[#8A4E2E] transition-colors line-clamp-2">
                       {relatedPost.title}
                     </h3>
                   </div>

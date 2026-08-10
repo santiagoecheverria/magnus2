@@ -1,0 +1,365 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Magnus Brand Colors */
+:root {
+  --magnus-primary: #0B2F33;
+  --magnus-secondary: #1B6E6A;
+  --magnus-accent: #C47A4A;
+  --magnus-accent-dark: #8A4E2E;
+  --magnus-background: #F4EFE6;
+  --magnus-text: #1F2933;
+  --magnus-cream: #FAF8F4;
+  
+  --radius: 0.625rem;
+  --background: 42 33% 94%;
+  --foreground: 210 20% 16%;
+  --card: 0 0% 100%;
+  --card-foreground: 210 20% 16%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 210 20% 16%;
+  --primary: 186 66% 12%;
+  --primary-foreground: 42 33% 94%;
+  --secondary: 177 61% 27%;
+  --secondary-foreground: 42 33% 94%;
+  --muted: 42 20% 90%;
+  --muted-foreground: 210 15% 40%;
+  --accent: 24 48% 53%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 42 20% 85%;
+  --input: 42 20% 85%;
+  --ring: 177 61% 27%;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--magnus-background);
+  color: var(--magnus-text);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--magnus-primary);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--magnus-background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--magnus-secondary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--magnus-primary);
+}
+
+/* Button Styles */
+.btn-primary {
+  background: var(--magnus-accent);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-primary:hover {
+  background: var(--magnus-accent-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(196, 122, 74, 0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--magnus-primary);
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  border: 2px solid var(--magnus-primary);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-secondary:hover {
+  background: var(--magnus-primary);
+  color: white;
+}
+
+.btn-small {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+}
+
+/* Section Styles */
+.section {
+  padding: 5rem 1rem;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 6rem 2rem;
+  }
+}
+
+.section-alt {
+  background: var(--magnus-cream);
+}
+
+/* Card Styles */
+.card-magnus {
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(11, 47, 51, 0.08);
+  transition: all 0.3s ease;
+}
+
+.card-magnus:hover {
+  box-shadow: 0 8px 30px rgba(11, 47, 51, 0.12);
+  transform: translateY(-4px);
+}
+
+/* Form Styles */
+.input-magnus {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  border: 2px solid #E5E0D5;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: white;
+  color: var(--magnus-text);
+}
+
+.input-magnus:focus {
+  outline: none;
+  border-color: var(--magnus-secondary);
+  box-shadow: 0 0 0 3px rgba(27, 110, 106, 0.1);
+}
+
+.input-magnus::placeholder {
+  color: #9CA3AF;
+}
+
+/* Label Styles */
+.label-magnus {
+  display: block;
+  font-weight: 500;
+  color: var(--magnus-primary);
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+/* Helper Text */
+.helper-text {
+  font-size: 0.85rem;
+  color: #6B7280;
+  margin-top: 0.25rem;
+}
+
+/* Error Text */
+.error-text {
+  font-size: 0.85rem;
+  color: #DC2626;
+  margin-top: 0.25rem;
+}
+
+/* Step Indicator */
+.step-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.step-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #D1D5DB;
+  transition: all 0.3s ease;
+}
+
+.step-dot.active {
+  background: var(--magnus-accent);
+  transform: scale(1.2);
+}
+
+.step-line {
+  width: 40px;
+  height: 2px;
+  background: #D1D5DB;
+}
+
+.step-line.active {
+  background: var(--magnus-accent);
+}
+
+/* FAQ Styles */
+.faq-item {
+  border-bottom: 1px solid #E5E0D5;
+  padding: 1.5rem 0;
+}
+
+.faq-question {
+  font-weight: 600;
+  color: var(--magnus-primary);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.faq-answer {
+  color: #4B5563;
+  margin-top: 1rem;
+  line-height: 1.7;
+}
+
+/* Trust Badge */
+.trust-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(27, 110, 106, 0.1);
+  border-radius: 2rem;
+  font-size: 0.9rem;
+  color: var(--magnus-secondary);
+  font-weight: 500;
+}
+
+/* Slider Styles */
+.slider-magnus {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  background: #E5E0D5;
+  outline: none;
+}
+
+.slider-magnus::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--magnus-accent);
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(196, 122, 74, 0.4);
+  transition: all 0.2s ease;
+}
+
+.slider-magnus::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+}
+
+/* Result Box */
+.result-box {
+  background: var(--magnus-primary);
+  color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+.result-amount {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--magnus-accent);
+}
+
+/* Animation Classes */
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Checkbox Custom */
+.checkbox-custom {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--magnus-secondary);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.checkbox-custom:checked {
+  background: var(--magnus-secondary);
+}
+
+/* Navigation Link */
+.nav-link {
+  color: var(--magnus-primary);
+  font-weight: 500;
+  transition: color 0.3s ease;
+  padding: 0.5rem 1rem;
+}
+
+.nav-link:hover {
+  color: var(--magnus-accent);
+}
+
+/* Mobile Menu */
+@media (max-width: 768px) {
+  .nav-desktop {
+    display: none;
+  }
+}
+
+/* Focus States */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--magnus-accent);
+  outline-offset: 2px;
+}
+
+/* Selection */
+::selection {
+  background: rgba(196, 122, 74, 0.3);
+  color: var(--magnus-primary);
+}

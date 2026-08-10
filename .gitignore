@@ -1,0 +1,6 @@
+# Dependencias
+app/node_modules/
+
+# Logs y temporales
+*.log
+.DS_Store

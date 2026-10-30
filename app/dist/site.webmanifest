@@ -1,0 +1,63 @@
+{
+  "name": "Magnus Chile - Hipoteca Inversa",
+  "short_name": "Magnus",
+  "description": "Recibe ingresos mensuales fijos por hasta 20 años con tu propiedad. Sin vender, sin deudas.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B2F33",
+  "theme_color": "#0B2F33",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "es-CL",
+  "icons": [
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/magnus_monogram_primary.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["finance", "business", "lifestyle"],
+  "screenshots": [
+    {
+      "src": "/og-image.jpg",
+      "sizes": "1200x630",
+      "type": "image/jpeg",
+      "form_factor": "wide",
+      "label": "Magnus - Ingresos mensuales con tu propiedad"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Simulador",
+      "short_name": "Simular",
+      "description": "Calcula tu ingreso mensual estimado",
+      "url": "/#simulador",
+      "icons": [{ "src": "/magnus_monogram_primary.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Pre-registro",
+      "short_name": "Registrarme",
+      "description": "Pre-regístrate en Magnus",
+      "url": "/#pre-registro",
+      "icons": [{ "src": "/magnus_monogram_primary.png", "sizes": "96x96" }]
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false
+}
